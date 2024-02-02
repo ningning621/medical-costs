@@ -10,6 +10,7 @@ const IndexPage = () => {
   const costDataUrl = "./static/data/cost.csv"
   const labelDataurl = "./static/data/labels.csv"
 
+  // TODO: dynamically change these values 
   const slug = "electrocardiogram-ekg"
   const geoLevel = "CA"
 
@@ -18,6 +19,7 @@ const IndexPage = () => {
 
   let [pageData, setPageData] = useState()
 
+  // Convert csv file to workable data
   useEffect(() => {
     const costResponse = fetch(costDataUrl)
       .then(response => response.text())
@@ -34,6 +36,7 @@ const IndexPage = () => {
     labelsResponse.then(v => setLabelsData(v.data))
   }, []);
 
+  // Initial filtering when data is ready 
   useEffect(() => {
     if (costData && labelsData) {
       let selectedCostData = {}
@@ -54,7 +57,6 @@ const IndexPage = () => {
         ...selectedLabelsData
       }
 
-      console.log(selectedData)
       setPageData(selectedData)
     }
   }, [costData, labelsData])

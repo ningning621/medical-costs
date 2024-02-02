@@ -10,9 +10,13 @@ const DataSection = ({ data }) => {
         <p className='datasection_title'>How much does it cost?</p>
         <p className='datasection_description'>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
       </div>
+
+      {/* Average price module */}
       <DataModule title="Average Price" location="California" styleId="module_price">
         <p className='module_pricetext'>{`$${Math.round(data.percent50)}`}</p>
-      </DataModule >
+      </DataModule>
+
+      {/* Price range module */}
       <DataModule title="Typical Price Range" location="California" styleId="module_range">
         <RangeChart data={data} />
       </DataModule>
