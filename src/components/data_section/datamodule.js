@@ -7,10 +7,7 @@ const DataModule = ({ title, location, styleId, children }) => {
       <div className='module_children'>
         {children}
       </div>
-      <div>
-        <div className='module_icon'></div>
-        <p className='module_location'>{location}</p>
-      </div>
+      <LocationDropdown />
     </div>
   )
 }

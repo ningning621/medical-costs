@@ -7,7 +7,7 @@ const StickyNav = () => {
         <p className="nav_title">Medical Costs</p>
         <p className="nav_description">Lorem ipsum dolor sit amet</p>
       </div>
-      <p className='nav_geolocation'>California</p>
+      <LocationDropdown />
     </div>
   )
 }
